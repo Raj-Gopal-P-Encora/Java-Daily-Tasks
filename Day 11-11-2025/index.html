@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badminton Matchmaker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🏸 Badminton Matchmaker</h1>
+
+        <div id="screen-player-setup" class="screen active">
+            <h2>Step 1: Enter Players</h2>
+
+            <div class="group-management-section">
+                <h3>Player Groups</h3>
+                <p>Load a saved group or save your current list of players.</p>
+                <div class="group-management-row">
+                    <div class="group-management-col">
+                        <label for="load-group-select">Load Group:</label>
+                        <div class="input-group">
+                            <select id="load-group-select">
+                                <option value="">-- Select a group --</option>
+                            </select>
+                            <button id="load-group-btn" class="secondary-btn">Load</button>
+                            <button id="delete-group-btn" class="danger-btn">Delete</button>
+                        </div>
+                    </div>
+                    <div class="group-management-col">
+                        <label for="save-group-name-input">Save Current List as:</label>
+                        <div class="input-group">
+                            <input type="text" id="save-group-name-input" placeholder="Group Name">
+                            <button id="save-group-btn" class="secondary-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="group-message"></div>
+            </div>
+
+            <hr>
+
+            <h3>Add New Player</h3>
+            <p>Add players one by one (Max 16). The current list will be used to create teams.</p>
+            <div class="input-group">
+                <input type="text" id="player-name-input" placeholder="Enter player name">
+                <button id="add-player-btn">Add Player</button>
+            </div>
+            <ul id="player-list">
+                </ul>
+            <div id="player-error" class="error-message"></div>
+            <button id="to-teams-btn" class="primary-btn">Next: Generate Teams &rarr;</button>
+        </div>
+
+        <div id="screen-team-setup" class="screen">
+            <h2>Step 2: Review Teams</h2>
+            <p>Here are your randomly generated teams. Go back to add/remove players or re-shuffle.</p>
+            <div id="team-list">
+                </div>
+            <div class="button-group">
+                <button id="back-to-players-btn" class="secondary-btn">&larr; Back to Players</button>
+                <button id="shuffle-teams-btn" class="secondary-btn">Re-Shuffle Teams</button>
+                <button id="start-tournament-btn" class="primary-btn">Start Tournament &rarr;</button>
+            </div>
+            <div id="team-error" class="error-message"></div>
+        </div>
+
+        <div id="screen-tournament" class="screen">
+            <h2>Step 3: Tournament Bracket</h2>
+            
+            <div id="tournament-container">
+                </div>
+
+            <div id="winner-display" class="winner-display">
+                </div>
+
+            <div class="button-group">
+                <button id="reset-tournament-btn" class="danger-btn">Reset Tournament</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
